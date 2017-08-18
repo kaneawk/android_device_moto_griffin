@@ -1,10 +1,11 @@
 ## TWRP device tree for Moto Z
 =====================================
+
 Device: Moto Z
 
 Codename: Griffin
 
-Device Configuration for Moto Z
+Device configuration for Moto Z
 =====================================
 
 Basic   | Spec Sheet

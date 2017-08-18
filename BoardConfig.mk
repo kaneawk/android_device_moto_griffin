@@ -21,7 +21,7 @@
 # definition file).
 #
 
-DEVICE_TREE := device/moto/griffin
+DEVICE_PATH := device/moto/griffin
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -47,14 +47,14 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Prebuilts
-TARGET_PREBUILT_KERNEL := device/moto/griffin/zImage
-BOARD_CUSTOM_BOOTIMG_MK := device/moto/griffin/mkbootimg.mk
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/zImage
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff cnsscore.pcie_link_down_panic=1 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100  --dt device/moto/griffin/dt.img
+BOARD_MKBOOTIMG_ARGS :=  --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --second_offset 0x00f00000 --tags_offset 0x00000100  --dt $(DEVICE_PATH)/dt.img
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 0x002000000

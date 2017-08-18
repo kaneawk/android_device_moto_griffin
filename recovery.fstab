@@ -5,10 +5,9 @@
 # mount point   fstype     device                       device2                  flags
 /system         ext4       /dev/block/bootdevice/by-name/system
 /system_image   emmc       /dev/block/bootdevice/by-name/system
-/data           f2fs       /dev/block/bootdevice/by-name/userdata                flags=encryptable=/dev/block/bootdevice/by-name/metadata
+/data           f2fs       /dev/block/bootdevice/by-name/userdata                flags=fsflags="inline_xattr";encryptable=/dev/block/bootdevice/by-name/metadata
 /cache          ext4       /dev/block/bootdevice/by-name/cache
-/recovery       emmc       /dev/block/bootdevice/by-name/recovery
-/recovery_bak   emmc       /dev/block/bootdevice/by-name/recovery                 flags=display="Recovery";backup=1
+/recovery       emmc       /dev/block/bootdevice/by-name/recovery                flags=backup=1;display="Recovery"
 /boot           emmc       /dev/block/bootdevice/by-name/boot
 /misc           emmc       /dev/block/bootdevice/by-name/misc
 /firmware       ext4       /dev/block/bootdevice/by-name/modem                   flags=fsflags="nosuid,nodev";display="Firmware";backup=1
@@ -20,5 +19,5 @@
 /oem            ext4       /dev/block/bootdevice/by-name/oem                     flags=backup=1;display="Oem"
 /dsp            ext4       /dev/block/bootdevice/by-name/dsp                     flags=backup=1;display="Dsp"
 
-/external_sd    auto       /dev/block/mmcblk0p    /dev/block/mmcblk0p1           flags=display="Micro SDCard";storage;wipeingui;removable
-/usb-otg        auto       /dev/block/sde1        /dev/block/sde                 flags=display="USB OTG";storage;wipeingui;removable
+/external_sd    auto       /dev/block/mmcblk0p1    /dev/block/mmcblk0            flags=display="Micro SDCard";storage;wipeingui;removable
+/usb-otg        auto       /dev/block/sde1         /dev/block/sde                flags=display="USB OTG";storage;wipeingui;removable
